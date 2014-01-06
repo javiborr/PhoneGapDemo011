@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "www", "D:\zpj\Azure\PhoneGap\pgdemo011\www\", "{D01E2DCD-4E4B-4565-83EB-73052D1B2664}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
+		Debug.AspNetCompiler.VirtualPath = "/www"
+		Debug.AspNetCompiler.PhysicalPath = "D:\zpj\Azure\PhoneGap\pgdemo011\www\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\www\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/www"
+		Release.AspNetCompiler.PhysicalPath = "D:\zpj\Azure\PhoneGap\pgdemo011\www\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\www\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51660"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D01E2DCD-4E4B-4565-83EB-73052D1B2664}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D01E2DCD-4E4B-4565-83EB-73052D1B2664}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

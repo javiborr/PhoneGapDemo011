@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+        <script src="js/lib/jquery.min.js"></script>
+        <link href="js/lib/jquery.mobile.min.css" rel="stylesheet" />
+        <script src="js/lib/jquery.mobile.min.js"></script>
+        <script type="text/javascript">
+            function mystuff() {
+                getDeviceProperties();
+                initNetworkStatus();
+            }
+            function getDeviceProperties() {
+                var element = document.getElementById('deviceProperties');
+                if (device) {
+                    element.innerHTML = 'Device Name: ' + device.name + '<br />' +
+                    'Device PhoneGap: ' + device.phonegap + '<br />' +
+                    'Device Platform: ' + device.platform + '<br />' +
+                    'Device UUID: ' + device.uuid + '<br />' +
+                    'Device Version: ' + device.version + '<br />';
+                } else {
+                    console.log("getDeviceProperties ERROR! device not defined or null");
+                }
+            }
+            function initNetworkStatus() {
+                document.addEventListener("online", toggleCon, false);
+                document.addEventListener("offline", toggleCon, false);
+                if (navigator && navigator.connection) {
+                    if (navigator.network.connection.type == Connection.NONE) {
+                        navigator.notification.alert("Sorry, you are offline.", function () { }, "Offline!");
+                    } else {
+                        //setupButtonHandler();
+                    }
+                } else {
+                    console.log("initNetworkStatus ERROR! navigator not defined or null");
+                }
+            }
+            function toggleCon(e) {
+                console.log("Called", e.type);
+                if (e.type == "offline") {
+                    //$("#searchBtn").off("touchstart").attr("disabled", "disabled");
+                    notificationAlert("Sorry, you are offline.", function () { }, "Offline!");
+                } else {
+                    //$("#searchBtn").removeAttr("disabled");
+                    notificationAlert("Woot, you are back online.", function () { }, "Online!");
+                    //setupButtonHandler();
+                }
+            }
+            function notificationAlert(ptit, pcbk, pmsg) {
+                if (navigator) {
+                    navigator.notification.alert(ptit, pcbk, pmsg);
+                } else {
+                    alert([ptit, pmsg].join('\n'));
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Conectando al dispositivo...</p>
+                <p class="event received">Dispositivo disponible</p>
+                <p id="deviceProperties"></p>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize(mystuff);
+        </script>
+    </body>
+</html>
