@@ -17,7 +17,11 @@
     <feature name="Vibration">
         <param name="android-package" value="org.apache.cordova.vibration.Vibration" />
     </feature>
-    <name>PGDemo011</name>
+    <feature name="org.apache.cordova.facebook.Connect">
+      <param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+    </feature>
+
+  <name>PGDemo011</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
     </description>
